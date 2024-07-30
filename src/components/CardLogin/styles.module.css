@@ -1,0 +1,61 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  width: 450px;
+  padding: 3rem 4.25rem;
+}
+.cardContainer a {
+  text-decoration: none;
+  color: inherit;
+}
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.formLogin a {
+  text-align: center;
+}
+.cardContainer h1 {
+  margin-bottom: 2rem;
+}
+.cardContainer .inputText {
+  height: 3.5rem;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(118, 118, 118);
+}
+
+.cardContainer button {
+  height: 40px;
+  border: none;
+  border-radius: 0.25rem;
+}
+.buttonToEnter {
+  background-color: red;
+}
+
+.formLogin .or {
+  text-align: center;
+}
+
+.rememberMe > input {
+  height: 1rem;
+  width: 1rem;
+}
+
+.footerCard p {
+  margin: 1rem 0;
+}
+.footerCard p span {
+  display: block;
+  font-size: 13px;
+  margin-top: 1.5rem;
+}
+.footerCard span a {
+  text-decoration: none;
+  color: rgb(0, 113, 235);
+}
