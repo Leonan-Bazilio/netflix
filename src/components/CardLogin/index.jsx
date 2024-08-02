@@ -1,17 +1,37 @@
+import { useState } from "react";
 import styles from "./styles.module.css";
 
 export default function CardLogin() {
+  const [login, setLogin] = useState({ email: "", password: "" });
+
+  function handleChange(event) {
+    setLogin({ ...login, [event.target.name]: event.target.value });
+  }
   return (
     <>
       <div className={styles.cardContainer}>
         <h1>Entrar</h1>
         <form className={styles.formLogin}>
-          <input
-            className={styles.inputText}
-            type="text"
-            placeholder="Email ou número de celular"
-          />
-          <input className={styles.inputText} type="text" placeholder="Senha" />
+          <div>
+            <label htmlFor="email">Email ou número de celular</label>
+            <input
+              value={login.email}
+              onChange={handleChange}
+              name="email"
+              className={styles.inputText}
+              type="text"
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Senha</label>
+            <input
+              value={login.password}
+              onChange={handleChange}
+              name="password"
+              className={styles.inputText}
+              type="password"
+            />
+          </div>
           <button className={styles.buttonToEnter}>Entrar</button>
           <p className={styles.or}>OU</p>
           <button>Usar um código de acesso</button>

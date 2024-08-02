@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .cardContainer {
   display: flex;
   flex-direction: column;
@@ -21,7 +27,19 @@
 .cardContainer h1 {
   margin-bottom: 2rem;
 }
+.cardContainer div {
+  width: 100%;
+  position: relative;
+}
+.cardContainer div label {
+  position: absolute;
+  z-index: 1;
+  left: 2rem;
+}
 .cardContainer .inputText {
+  position: relative;
+  width: 100%;
+  color: white;
   height: 3.5rem;
   padding: 1rem;
   background-color: black;
