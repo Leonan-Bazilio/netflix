@@ -1,20 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .cardContainer {
+  font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu,
+    sans-serif;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   width: 450px;
   padding: 3rem 4.25rem;
+  margin: 0 auto;
 }
 .cardContainer a {
   text-decoration: none;
   color: inherit;
+}
+
+.cardContainer h1 {
+  margin-bottom: 2rem;
+}
+.cardContainer div {
+  width: 100%;
+  position: relative;
 }
 .formLogin {
   display: flex;
@@ -24,30 +29,49 @@
 .formLogin a {
   text-align: center;
 }
-.cardContainer h1 {
-  margin-bottom: 2rem;
-}
-.cardContainer div {
-  width: 100%;
-  position: relative;
-}
-.cardContainer div label {
+
+.formLogin div label {
   position: absolute;
-  z-index: 1;
-  left: 2rem;
+  line-height: 1.5rem;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.25s;
 }
-.cardContainer .inputText {
+.formLogin .divFild {
+  margin-bottom: 1rem;
+}
+.formLogin .errorContainer {
+  display: flex;
+
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 13px;
+  color: rgb(235, 57, 66);
+}
+.formLogin .focused label {
+  font-size: 0.75rem;
+  top: 10%;
+  transform: translateY(0%);
+}
+
+.formLogin .inputText {
+  font-size: 1rem;
   position: relative;
   width: 100%;
   color: white;
   height: 3.5rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem 0.5rem 1rem;
   background-color: black;
   border-radius: 0.25rem;
   border: 1px solid rgb(118, 118, 118);
 }
+input:focus {
+  outline: none;
 
-.cardContainer button {
+  box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+}
+.formLogin button {
   height: 40px;
   border: none;
   border-radius: 0.25rem;
@@ -55,16 +79,13 @@
 .buttonToEnter {
   background-color: red;
 }
-
 .formLogin .or {
   text-align: center;
 }
-
 .rememberMe > input {
   height: 1rem;
   width: 1rem;
 }
-
 .footerCard p {
   margin: 1rem 0;
 }
@@ -76,4 +97,10 @@
 .footerCard span a {
   text-decoration: none;
   color: rgb(0, 113, 235);
+}
+
+.teste img {
+  color: #eb3942;
+  fill: #eb3942;
+  background-color: black;
 }

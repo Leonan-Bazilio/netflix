@@ -1,9 +1,9 @@
-import CardLogin from "./components/CardLogin";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <>
-      <CardLogin />
+      <Login />
     </>
   );
 }
