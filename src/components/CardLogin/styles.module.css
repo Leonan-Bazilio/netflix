@@ -13,7 +13,6 @@
   text-decoration: none;
   color: inherit;
 }
-
 .cardContainer h1 {
   margin-bottom: 2rem;
 }
@@ -39,20 +38,24 @@
   transition: all 0.25s;
 }
 .formLogin .divFild {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+.formLogin .errorInput input {
+  border-color: #eb3942;
 }
 .formLogin .errorContainer {
   display: flex;
-
   align-items: center;
   gap: 0.25rem;
   font-size: 13px;
+  margin-top: 0px;
   color: rgb(235, 57, 66);
 }
 .formLogin .focused label {
   font-size: 0.75rem;
   top: 10%;
   transform: translateY(0%);
+  opacity: 60%;
 }
 
 .formLogin .inputText {
@@ -68,7 +71,6 @@
 }
 input:focus {
   outline: none;
-
   box-shadow: 0 0 0 2px black, 0 0 0 4px white;
 }
 .formLogin button {
@@ -76,8 +78,26 @@ input:focus {
   border: none;
   border-radius: 0.25rem;
 }
+.formLogin button {
+  color: white;
+  font-size: 1rem;
+}
+.formLogin button {
+  cursor: pointer;
+}
 .buttonToEnter {
-  background-color: red;
+  background-color: rgb(229, 9, 20);
+  transition: background-color 0.25s ease;
+}
+.buttonToEnter:hover {
+  background-color: #c11119;
+}
+.btnAcessCode {
+  background-color: rgba(174, 174, 174, 0.3);
+  transition: background-color 0.25s ease;
+}
+.btnAcessCode:hover {
+  background-color: rgba(174, 174, 174, 0.2);
 }
 .formLogin .or {
   text-align: center;

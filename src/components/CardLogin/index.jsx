@@ -50,10 +50,13 @@ export default function CardLogin() {
   return (
     <div className={styles.cardContainer}>
       <h1>Entrar</h1>
-
       <form className={styles.formLogin}>
         <div className={focus.email ? styles.focused : ""}>
-          <div className={styles.divFild}>
+          <div
+            className={`${styles.divFild} ${
+              errors.email ? styles.errorInput : ""
+            }`}
+          >
             <input
               value={login.email}
               onChange={handleChange}
@@ -74,7 +77,11 @@ export default function CardLogin() {
           )}
         </div>
         <div className={focus.password ? styles.focused : ""}>
-          <div className={styles.divFild}>
+          <div
+            className={`${styles.divFild} ${
+              errors.password ? styles.errorInput : ""
+            }`}
+          >
             <input
               value={login.password}
               onChange={handleChange}
@@ -96,7 +103,7 @@ export default function CardLogin() {
         </div>
         <button className={styles.buttonToEnter}>Entrar</button>
         <p className={styles.or}>OU</p>
-        <button>Usar um código de acesso</button>
+        <button className={styles.btnAcessCode}>Usar um código de acesso</button>
         <a href="">Esqueceu a senha?</a>
         <label className={styles.rememberMe}>
           <input type="checkbox" />
