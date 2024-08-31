@@ -1,0 +1,29 @@
+.container {
+  background-color: black;
+  color: white;
+  min-height: 4rem;
+  width: 100%;
+  padding: 1.25rem 7rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.container a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.container p {
+  margin: 1.5rem 0;
+}
+.numberPhone {
+  text-decoration: none;
+}
+.linksContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 960px) {
+  .linksContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

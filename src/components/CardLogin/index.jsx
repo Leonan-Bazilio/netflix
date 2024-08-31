@@ -103,7 +103,9 @@ export default function CardLogin() {
         </div>
         <button className={styles.buttonToEnter}>Entrar</button>
         <p className={styles.or}>OU</p>
-        <button className={styles.btnAcessCode}>Usar um código de acesso</button>
+        <button className={styles.btnAcessCode}>
+          Usar um código de acesso
+        </button>
         <a href="">Esqueceu a senha?</a>
         <label className={styles.rememberMe}>
           <input type="checkbox" />
@@ -112,10 +114,11 @@ export default function CardLogin() {
       </form>
       <div className={styles.footerCard}>
         <p>
-          Novo por aqui?<a href="">Assine agora</a>
+          <span className={styles.clearer}>Novo por aqui? </span>
+          <a href="">Assine agora</a>
         </p>
         <p>
-          <span>
+          <span className={styles.infoSecurity}>
             Esta página é protegida pelo Google reCAPTCHA para garantir que você
             não é um robô. <a href="">Saiba mais.</a>
           </span>
