@@ -13,6 +13,10 @@
   text-decoration: none;
   color: inherit;
 }
+.cardContainer a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .cardContainer h1 {
   margin-bottom: 2rem;
 }
@@ -29,72 +33,17 @@
   text-align: center;
 }
 
-.formLogin div label {
-  position: absolute;
-  line-height: 1.5rem;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.25s;
-}
-.formLogin .divFild {
-  margin-bottom: 0.5rem;
-}
-.formLogin .errorInput input {
-  border-color: #eb3942;
-}
-.formLogin .errorContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 13px;
-  margin-top: 0px;
-  color: rgb(235, 57, 66);
-}
-.formLogin .focused label {
-  font-size: 0.75rem;
-  top: 10%;
-  transform: translateY(0%);
-  opacity: 60%;
-}
-
-.formLogin .inputText {
-  font-size: 1rem;
-  position: relative;
-  width: 100%;
-  color: white;
-  height: 3.5rem;
-  padding: 1.5rem 1rem 0.5rem 1rem;
-  background-color: black;
-  border-radius: 0.25rem;
-  border: 1px solid rgb(118, 118, 118);
-}
-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px black, 0 0 0 4px white;
-}
-.formLogin button {
-  height: 40px;
-  border: none;
-  border-radius: 0.25rem;
-}
-.formLogin button {
-  color: white;
-  font-size: 1rem;
-}
-.formLogin button {
-  cursor: pointer;
-}
 .buttonToEnter {
   background-color: rgb(229, 9, 20);
-  transition: background-color 0.25s ease;
 }
 .buttonToEnter:hover {
-  background-color: #c11119;
+  background-color: rgb(193, 17, 25);
+}
+.or {
+  color: rgba(255, 255, 255, 0.7);
 }
 .btnAcessCode {
   background-color: rgba(174, 174, 174, 0.3);
-  transition: background-color 0.25s ease;
 }
 .btnAcessCode:hover {
   background-color: rgba(174, 174, 174, 0.2);
@@ -107,26 +56,4 @@ input:focus {
   width: 1rem;
   margin-right: 1rem;
   color: red;
-}
-.footerCard p {
-  margin: 1rem 0;
-}
-.footerCard .clearer {
-  color: rgba(255, 255, 255, 0.7);
-}
-.footerCard .infoSecurity {
-  display: block;
-  font-size: 13px;
-  margin-top: 1.5rem;
-  color: rgb(140, 140, 140);
-}
-.footerCard .infoSecurity a {
-  text-decoration: none;
-  color: rgb(0, 113, 235);
-}
-
-.teste img {
-  color: #eb3942;
-  fill: #eb3942;
-  background-color: black;
 }

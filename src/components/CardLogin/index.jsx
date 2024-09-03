@@ -1,6 +1,9 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
-import iconErrorInput from "../../assets/images/icon.svg";
+import InputField from "./InputField";
+import ErrorMessage from "./ErrorMessage";
+import Button from "./Button";
+import FooterCardLogin from "./FooterCardLogin";
 
 export default function CardLogin() {
   const [login, setLogin] = useState({ email: "", password: "" });
@@ -51,79 +54,47 @@ export default function CardLogin() {
     <div className={styles.cardContainer}>
       <h1>Entrar</h1>
       <form className={styles.formLogin}>
-        <div className={focus.email ? styles.focused : ""}>
-          <div
-            className={`${styles.divFild} ${
-              errors.email ? styles.errorInput : ""
-            }`}
-          >
-            <input
-              value={login.email}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              name="email"
-              id="email"
-              className={styles.inputText}
-              type="text"
-            />
-            <label htmlFor="email">Email ou número de celular</label>
-          </div>
-          {errors.email && (
-            <div className={styles.errorContainer}>
-              <img src={iconErrorInput} alt="Icon" />
-              <p className={styles.errorMessage}>{errors.email}</p>
-            </div>
-          )}
+        <div>
+          <InputField
+            value={login.email}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            nameAndId="email"
+            type="text"
+            label="Email ou número de celular"
+            error={errors.email}
+            isFocused={focus.email}
+          />
+          {errors.email && <ErrorMessage message={errors.email} />}
         </div>
-        <div className={focus.password ? styles.focused : ""}>
-          <div
-            className={`${styles.divFild} ${
-              errors.password ? styles.errorInput : ""
-            }`}
-          >
-            <input
-              value={login.password}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              name="password"
-              id="password"
-              className={styles.inputText}
-              type="password"
-            />
-            <label htmlFor="password">Senha</label>
-          </div>
-          {errors.password && (
-            <div className={styles.errorContainer}>
-              <img src={iconErrorInput} alt="Icon" />
-              <p className={styles.errorMessage}>{errors.password}</p>
-            </div>
-          )}
+        <div>
+          <InputField
+            value={login.password}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            nameAndId="password"
+            type="password"
+            label="Senha"
+            error={errors.password}
+            isFocused={focus.password}
+          />
+          {errors.password && <ErrorMessage message={errors.password} />}
         </div>
-        <button className={styles.buttonToEnter}>Entrar</button>
+        <Button className={styles.buttonToEnter} text="Entrar" />
         <p className={styles.or}>OU</p>
-        <button className={styles.btnAcessCode}>
-          Usar um código de acesso
-        </button>
+        <Button
+          className={styles.btnAcessCode}
+          text="Usar um código de acesso"
+        />
         <a href="">Esqueceu a senha?</a>
         <label className={styles.rememberMe}>
           <input type="checkbox" />
           Lembre-se de mim
         </label>
       </form>
-      <div className={styles.footerCard}>
-        <p>
-          <span className={styles.clearer}>Novo por aqui? </span>
-          <a href="">Assine agora</a>
-        </p>
-        <p>
-          <span className={styles.infoSecurity}>
-            Esta página é protegida pelo Google reCAPTCHA para garantir que você
-            não é um robô. <a href="">Saiba mais.</a>
-          </span>
-        </p>
-      </div>
+      <FooterCardLogin />
     </div>
   );
 }

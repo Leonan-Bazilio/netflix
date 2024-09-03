@@ -1,0 +1,15 @@
+.footerCard p {
+  margin: 1rem 0;
+}
+.footerCard .clearer {
+  color: rgba(255, 255, 255, 0.7);
+}
+.footerCard .infoSecurity {
+  display: block;
+  font-size: 13px;
+  margin-top: 1.5rem;
+  color: rgb(140, 140, 140);
+}
+.footerCard .infoSecurity a {
+  color: rgb(0, 113, 235);
+}
