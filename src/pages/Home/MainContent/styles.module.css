@@ -1,0 +1,27 @@
+.container {
+  padding: 1rem 5%;
+  width: 100%;
+  height: 700px;
+  background-image: url("https://image.tmdb.org/t/p/original/xq4v7JE8niZ75OYYPDGNn6Gzpyt.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.featuredSection {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+
+  align-items: center;
+}
+.feature {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.feature button {
+  width: fit-content;
+}

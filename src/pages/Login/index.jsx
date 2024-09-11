@@ -1,6 +1,6 @@
-import CardLogin from "../../components/CardLogin";
-import FooterLogin from "../../components/FooterLogin";
-import HeaderLogin from "../../components/HeaderLogin";
+import CardLogin from "./CardLogin";
+import FooterLogin from "./FooterLogin";
+import HeaderLogin from "./HeaderLogin";
 import styles from "./styles.module.css";
 
 export default function Login() {

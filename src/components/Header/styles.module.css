@@ -1,0 +1,42 @@
+.container {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    transparent
+  );
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  position: fixed;
+}
+.container a {
+  text-decoration: none;
+  color: #e5e5e5;
+  font-size: 14px;
+}
+
+.logoAndNav {
+  display: flex;
+}
+
+.logo img {
+  height: 2rem;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.others {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile1 {
+  width: 2rem;
+  height: 2rem;
+}

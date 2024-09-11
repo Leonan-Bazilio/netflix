@@ -1,4 +1,4 @@
-import netflixLogo from "../../assets/images/netflixLogo.png";
+import netflixLogo from "../../../assets/images/netflixLogo.png";
 import styles from "./styles.module.css";
 export default function HeaderLogin() {
   return (
