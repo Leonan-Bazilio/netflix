@@ -1,0 +1,49 @@
+.collectionsSection {
+  width: 100%;
+  padding-bottom: 10rem;
+  background-color: rgb(150, 150, 150);
+}
+.moviesCarouselAndArraw {
+  position: relative;
+  background-color: red;
+}
+.moviesCarousel {
+  background-color: yellow;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+  transition: transform 2s ease-in-out;
+}
+
+.movieCard {
+  background-color: red;
+  flex: 0 0 20%;
+  padding-right: 0.5rem;
+  line-height: 0;
+}
+.movieCard img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.nextArrow,
+.prevArrow {
+  border: none;
+  width: 20%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.nextArrow {
+  left: 100%;
+}
+.prevArrow {
+  right: 100%;
+}
+.toHide {
+  display: none;
+}

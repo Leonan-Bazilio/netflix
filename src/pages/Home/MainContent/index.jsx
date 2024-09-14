@@ -1,29 +1,12 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import axios from "axios";
-export default function MainContent() {
-  return (
-    <div className={styles.container}>
-      <div className={styles.featuredSection}>
-        <div className={styles.feature}>
-          <h1>DeadPool e wolverine</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            molestias aliquam earum velit deserunt praesentium aut fugit, modi
-            iure fuga eveniet perferendis accusamus ratione dolore. Rerum animi
-            dolor hic odio repudiandae, nisi eum, exercitationem quibusdam
-            provident est numquam dignissimos amet?
-          </p>
-          <button>assistir</button>
-          <button>mais informaçoes</button>
-        </div>
-      </div>
-    </div>
-  );
-}
+import MediaCarousel from "../MediaCarousel";
 
-/*
-const [movies, setMovies] = useState([]);
+export default function MainContent() {
+  const [movies, setMovies] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextClicked, setNextClicked] = useState(false);
 
   const getMovies = () => {
     axios({
@@ -39,35 +22,47 @@ const [movies, setMovies] = useState([]);
       console.log(response.data.results);
     });
   };
-
   useEffect(() => {
     getMovies();
   }, []);
 
+  const handleNext = () => {
+    if (!nextClicked) {
+      setNextClicked(true);
+    }
+    if (currentIndex < 3) {
+      return setCurrentIndex((currentValue) => currentValue + 1);
+    }
+    return setCurrentIndex(0);
+  };
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      return setCurrentIndex((currentValue) => currentValue - 1);
+    }
+    return setCurrentIndex(3);
+  };
 
-<div>
-      <img
-        src={
-          "https://image.tmdb.org/t/p/original/xq4v7JE8niZ75OYYPDGNn6Gzpyt.jpg"
-        }
-        alt=""
-      />
-      <ul>
-        {movies.map((movie) => {
-          return (
-            <li>
-              {movie.title}
-              <p>{movie.overview}</p>
-              <img
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                alt=""
-              />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+  return (
+    <main className={styles.container}>
+      <section className={styles.featuredSection}>
+        <div className={styles.feature}>
+          <h1>DeadPool e wolverine</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            molestias aliquam earum velit deserunt praesentium aut fugit, modi
+            iure fuga eveniet perferendis accusamus ratione dolore. Rerum animi
+            dolor hic odio repudiandae, nisi eum, exercitationem quibusdam
+            provident est numquam dignissimos amet?
+          </p>
+          <button>assistir</button>
+          <button>mais informaçoes</button>
+        </div>
+      </section>
 
-5902d0084e4efa1e5f3fdf3c7adcaab4
-
-eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTAyZDAwODRlNGVmYTFlNWYzZmRmM2M3YWRjYWFiNCIsIm5iZiI6MTcyNjAwNjA5OC44ODUwODQsInN1YiI6IjY2ZTBjMGEzMDAwMDAwMDAwMDIyODg1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.M37uhBmbaGzqrtwOMxZhEpOIDJZbFfEQWnnDgRfKoW4 */
+      <MediaCarousel partOfUrl={"movie/popular"} />
+      <MediaCarousel partOfUrl={"tv/popular"} />
+      <MediaCarousel textSection="Ação" genre={"28"} />
+      <MediaCarousel textSection="Comedia" genre={"35"} withoutGenres="28" />
+    </main>
+  );
+}
