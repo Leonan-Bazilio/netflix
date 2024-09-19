@@ -1,27 +1,67 @@
 .container {
-  padding: 1rem 4%;
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.backgroundImage {
   width: 100%;
   height: 700px;
   background-image: url("https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
 }
+
+.content {
+  padding: 1rem 4%;
+  position: inherit;
+  z-index: 2;
+}
+
 .featuredSection {
   width: 100%;
-  min-height: 100vh;
+  height: 95vh;
   display: flex;
-
-  align-items: center;
+  align-items: end;
 }
 .feature {
-  background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   width: 40%;
+  margin-bottom: 10%;
 }
 
-.feature button {
-  width: fit-content;
+.containerButtons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.divWatch,
+.divMore {
+  display: flex;
+  background-color: white;
+  padding: 0.625rem 1.5rem;
+  gap: 1rem;
+  border-radius: 0.25rem;
+}
+.divMore {
+  background-color: rgba(109, 109, 110, 0.7);
+}
+
+.divMore button {
+  color: white;
+}
+.containerButtons button {
+  background-color: transparent;
+  border: none;
+
+  font-size: 1rem;
+  font-weight: 700;
 }

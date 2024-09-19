@@ -1,0 +1,92 @@
+.container {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    transparent
+  );
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4%;
+  position: fixed;
+  z-index: 2;
+  transition: background-color 0.4s ease;
+ 
+}
+
+.scrolled {
+  background-color: rgb(20, 20, 20);
+}
+
+.container a {
+  text-decoration: none;
+  color: #e5e5e5;
+  font-size: 14px;
+}
+
+.logoAndNav {
+  display: flex;
+  gap: 3rem;
+}
+
+.logo img {
+  height: 1.75rem;
+  margin-top: 0.25rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.others {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile1 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.logoAndNav nav .active {
+  color: white;
+  font-weight: 500;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: border 0.3s ease, min-width 0.5s ease;
+}
+
+.searchContainerOpen {
+  border: 1px solid white;
+  min-width: 50px;
+}
+
+.searchContainer img {
+  cursor: pointer;
+}
+
+.inputSearch {
+  width: 0;
+  opacity: 0;
+  transition: width 0.5s ease, opacity 0.3s ease;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.searchContainerOpen .inputSearch {
+  width: 200px;
+  opacity: 1;
+}
+
+.others img {
+  cursor: pointer;
+}
