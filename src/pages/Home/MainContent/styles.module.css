@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 700px;
   overflow: hidden;
-  background-color: black;
+  background-color: #141414;
 }
 
 .backgroundImage {
@@ -17,10 +17,20 @@
   z-index: 1;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, #141414 50%);
+  z-index: 2;
+}
+
 .content {
   padding: 1rem 4%;
   position: inherit;
-  z-index: 2;
+  z-index: 3;
 }
 
 .featuredSection {
@@ -34,7 +44,7 @@
   display: flex;
   flex-direction: column;
   width: 40%;
-  margin-bottom: 10%;
+  margin-bottom: 3%;
 }
 
 .containerButtons {
@@ -43,6 +53,12 @@
   flex-wrap: nowrap;
   gap: 1rem;
 }
+.containerButtons button {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
 .divWatch,
 .divMore {
   display: flex;
@@ -50,18 +66,32 @@
   padding: 0.625rem 1.5rem;
   gap: 1rem;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 .divMore {
   background-color: rgba(109, 109, 110, 0.7);
 }
-
 .divMore button {
   color: white;
 }
-.containerButtons button {
-  background-color: transparent;
-  border: none;
+.divMore:hover {
+  background-color: rgba(109, 109, 110, 0.5);
+}
+.divWatch:hover {
+  background-color: rgb(255, 255, 255, 0.7);
+}
+.imgTitle {
+  width: 400px;
+}
 
-  font-size: 1rem;
-  font-weight: 700;
+.descriptionWrapper {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 1.5s ease-in-out, max-height 1s ease;
+}
+
+.visible {
+  max-height: 500px;
+  opacity: 1;
 }

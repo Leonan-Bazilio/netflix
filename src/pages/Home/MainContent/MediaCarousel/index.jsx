@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+
+import { MdArrowBackIos } from "react-icons/md";
 import axios from "axios";
+import MovieCard from "./MovieCard";
 
 export default function MediaCarousel({
   genre = "",
@@ -35,6 +38,7 @@ export default function MediaCarousel({
             language: "pt-BR",
             with_genres: genre,
             page: 2,
+            without_genres: withoutGenres,
           },
         }
       );
@@ -42,6 +46,7 @@ export default function MediaCarousel({
         ...responsePage1.data.results,
         ...responsePage2.data.results,
       ];
+      console.log(allMovies);
       setMovies(allMovies);
     } catch (error) {
       console.error(error);
@@ -78,37 +83,47 @@ export default function MediaCarousel({
             style={{ transform: `translateX(-${20 + 100 * currentIndex}%)` }}
           >
             {movies[movies.length - 1] && (
-              <div className={styles.movieCard} key={"last"}>
-                <img
-                  className={nextClicked ? "" : styles.toHide}
-                  src={`https://image.tmdb.org/t/p/w1280${movies[19].backdrop_path}`}
-                  alt={movies[19].title}
-                />
-              </div>
+              <MovieCard
+                movieId={"last"}
+                title={movies[movies.length - 1].title}
+                backdropPath={movies[movies.length - 1].backdrop_path}
+                arrayGenreId={movies[movies.length - 1].genre_ids}
+                toHide={nextClicked}
+              />
             )}
 
             {movies.map((movie) => {
               return (
-                <div className={styles.movieCard} key={movie.id}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
-                    alt=""
-                  />
-                </div>
+                <MovieCard
+                  movieId={movie.id}
+                  title={movie.title}
+                  backdropPath={movie.backdrop_path}
+                  arrayGenreId={movie.genre_ids}
+                />
               );
             })}
             {movies[0] && (
-              <div className={styles.movieCard} key={"firstMovie"}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w1280${movies[0].backdrop_path}`}
-                  alt={movies[0].title}
-                />
-              </div>
+              <MovieCard
+                movieId={"firstMovie"}
+                title={movies[0].title}
+                backdropPath={movies[0].backdrop_path}
+                arrayGenreId={movies[0].genre_ids}
+              />
             )}
           </div>
 
-          <button className={styles.nextArrow} onClick={handleNext}></button>
-          <button className={styles.prevArrow} onClick={handlePrev}></button>
+          <div onClick={handleNext} className={styles.divIconNext}>
+            <MdArrowBackIos className={styles.arrowIcon} />
+          </div>
+
+          <div
+            onClick={handlePrev}
+            className={`${styles.divIconPrev} ${
+              nextClicked ? styles.active : ""
+            }`}
+          >
+            <MdArrowBackIos className={styles.arrowIcon} />
+          </div>
         </div>
       </div>
     </section>

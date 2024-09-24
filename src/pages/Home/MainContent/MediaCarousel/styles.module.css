@@ -1,0 +1,69 @@
+.collectionsSection {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+.corouselAndTitle h2 {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.25rem;
+}
+.corouselAndTitle h2:hover {
+  color: rgba(255, 255, 255);
+}
+.moviesCarouselAndArraw {
+  position: relative;
+}
+.moviesCarousel {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+  transition: transform 2s ease-in-out;
+}
+
+.toHide {
+  display: none;
+}
+.divIconNext,
+.divIconPrev {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  z-index: 2;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.divIconPrev {
+  display: none;
+  justify-content: end;
+  right: 100%;
+}
+.divIconPrev.active {
+  display: flex;
+}
+.divIconNext {
+  display: flex;
+  justify-content: start;
+  left: 100%;
+}
+.divIconNext:hover,
+.divIconPrev:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.arrowIcon {
+  font-size: 3rem;
+  color: white;
+}
+
+.divIconNext .arrowIcon {
+  rotate: 180deg;
+  margin-left: -5%;
+}
+.divIconPrev .arrowIcon {
+  margin-right: -5%;
+}

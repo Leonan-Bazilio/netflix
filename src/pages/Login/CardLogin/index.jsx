@@ -4,11 +4,14 @@ import InputField from "./InputField";
 import ErrorMessage from "./ErrorMessage";
 import Button from "./Button";
 import FooterCardLogin from "./FooterCardLogin";
+import { useNavigate } from "react-router-dom";
 
 export default function CardLogin() {
   const [login, setLogin] = useState({ email: "", password: "" });
   const [focus, setFocus] = useState({ email: false, password: false });
   const [errors, setErrors] = useState({});
+
+  const navigate = useNavigate();
 
   function handleChange(event) {
     setLogin({ ...login, [event.target.name]: event.target.value });
@@ -49,11 +52,20 @@ export default function CardLogin() {
 
     setErrors(errorsInput);
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    validate("email");
+    validate("password");
+
+    if (!errors.email && !errors.password) {
+      navigate("/Home");
+    }
+  }
 
   return (
     <div className={styles.cardContainer}>
       <h1>Entrar</h1>
-      <form className={styles.formLogin}>
+      <form className={styles.formLogin} onSubmit={handleSubmit}>
         <div>
           <InputField
             value={login.email}
@@ -82,7 +94,7 @@ export default function CardLogin() {
           />
           {errors.password && <ErrorMessage message={errors.password} />}
         </div>
-        <Button className={styles.buttonToEnter} text="Entrar" />
+        <Button type="submit" className={styles.buttonToEnter} text="Entrar" />
         <p className={styles.or}>OU</p>
         <Button
           className={styles.btnAcessCode}

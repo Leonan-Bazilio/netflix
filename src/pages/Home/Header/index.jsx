@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import netflixLogo from "../../../assets/images/netflixLogo2.png";
 import searchIcon from "../../../assets/images/icon/search.svg";
 import notificationIcon from "../../../assets/images/icon/notification.svg";
-import profile1 from "../../../assets/images/profile/naruto.jpg";
+import profile1 from "../../../assets/images/profile/summerProfile.jpg";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 
