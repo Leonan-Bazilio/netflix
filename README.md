@@ -1,8 +1,18 @@
-# React + Vite
+# Projeto MainCarousel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto React é uma é um clone da tela de login e home da netflix focando mais no visual
 
-Currently, two official plugins are available:
+## Instalação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/git@github.com:Leonan-Bazilio/netflix.git
+   cd netflix
+2. Instale as dependências:
+   ```bash
+   npm install
+3. Inicie a aplicação:
+   ```bash
+   npm run dev
+
